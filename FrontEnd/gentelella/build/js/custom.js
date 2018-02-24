@@ -804,13 +804,30 @@ function init_gauge() {
 
 function init_patient_basic_data() {
     var url = "http://127.0.0.1:8080/getUser?userId=2";
-    $.get(url, function(data, status){
+    $.get(url, function (data, status) {
         console.log("Data: " + data.results[0] + "\nStatus: " + status);
         var name = data.results[0].name;
         var surname = data.results[0].surname;
         var dob = data.results[0].dob;
-        var age = data.results[0].age;
-        $("#Patient").text("patient: " + name + " " + surname);
+        var weight = data.results[0].weight;
+        $("#patient").text("patient: " + name + " " + surname);
+        $("#patientDob").text(dob);
+        $("#patientWeight").text(weight);
+
+
+    });
+}
+
+
+    function init_patient_metric_data() {
+    var url = "http://127.0.0.1:8080/getUserData?userId=2";
+    $.get(url, function(data, status){
+        console.log("Data: " + data.results[0] + "\nStatus: " + status);
+        var weight = data.results[0].weight;
+        var height = data.results[0].height;
+
+        $("#patientWeight").text(weight);
+        $("#patientHeight").text(height);
 
 
     });
@@ -5049,6 +5066,7 @@ function init_echarts() {
 
 $(document).ready(function() {
     init_patient_basic_data();
+    init_patient_metric_data();
     init_sparklines();
     init_flot_chart();
     init_sidebar();

@@ -29,7 +29,7 @@ router.get('/getUserData', function(req, res, next) {
 
     return async.waterfall([
         function(wfCallback){
-            var sql = "SELECT heartRate, weight, height from userData where userId=" + userId;
+            var sql = "SELECT heartRate, weight, height, created from userData where userId=" + userId;
             return mySqlConnUtils.query(sql,[],false,wfCallback);
         }
     ],function(error,results){
