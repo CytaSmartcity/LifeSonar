@@ -5305,7 +5305,7 @@ $(document).ready(function() {
     init_select2();
     init_validator();
     init_DataTables();
-    // init_all_patients_historic_data();
+    init_all_patients_historic_data();
     init_chart_doughnut();
     init_gauge();
     init_PNotify();
