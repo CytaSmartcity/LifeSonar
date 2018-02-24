@@ -388,7 +388,6 @@ function init_flot_chart(){
         [16, 9]
     ];
 
-    var galvanic_skin_response_chart_data = [];
     var chart_plot_02_data = [];
 
     var chart_plot_03_data = [
@@ -416,11 +415,9 @@ function init_flot_chart(){
         chart_plot_02_data.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
     }
 
-    for (var i = 0; i <= 60; i++) {
-		  galvanic_skin_response_chart_data.push([i, randNum() + i + i + 10 + 30*Math.cos(i)]);
-		}
-		var chart_plot_01_settings = {
-          series: {
+
+    var chart_plot_01_settings = {
+        series: {
             lines: {
                 show: false,
                 fill: true
@@ -528,149 +525,28 @@ function init_flot_chart(){
         }
     };
 
-
-
-
-    var chart_plot_02_settings = {
-			grid: {
-				show: true,
-				aboveData: true,
-				color: "#3f3f3f",
-				labelMargin: 10,
-				axisMargin: 0,
-				borderWidth: 0,
-				borderColor: null,
-				minBorderMargin: 5,
-				clickable: true,
-				hoverable: true,
-				autoHighlight: true,
-				mouseActiveRadius: 100
-			},
-			series: {
-				lines: {
-					show: true,
-					fill: true,
-					lineWidth: 2,
-					steps: false
-				},
-				points: {
-					show: true,
-					radius: 4.5,
-					symbol: "circle",
-					lineWidth: 3.0
-				}
-			},
-			legend: {
-				position: "ne",
-				margin: [0, -25],
-				noColumns: 0,
-				labelBoxBorderColor: null,
-				labelFormatter: function(label, series) {
-					return label + '&nbsp;&nbsp;';
-				},
-				width: 40,
-				height: 1
-			},
-			colors: ['#96CA59', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'],
-			shadowSize: 0,
-			tooltip: true,
-			tooltipOpts: {
-				content: "%s: %y.0",
-				xDateFormat: "%d/%m",
-			shifts: {
-				x: -30,
-				y: -50
-			},
-			defaultTheme: false
-			},
-			yaxis: {
-				min: 0
-			},
-			xaxis: {
-				mode: "time",
-				minTickSize: [1, "day"],
-				timeformat: "%d/%m/%y",
-				min: chart_plot_02_data[0][0],
-				max: chart_plot_02_data[20][0]
-			}
-};
-
-var galvanic_skin_response_chart_settings = {
-grid: {
-show: true,
-color: "#3f3f3f",
-aboveData: true,
-labelMargin: 10,
-borderWidth: 0,
-axisMargin: 0,
-borderColor: null,
-clickable: true,
-hoverable: true,
-minBorderMargin: 5,
-autoHighlight: true,
-mouseActiveRadius: 100
-},
-series: {
-  lines: {
-      show: true,
-      fill: false,
-      lineWidth: 1,
-      steps: false
-  },
-points: {
-  show: true,
-  radius: 2,
-  symbol: "circle",
-  lineWidth: 1.0
-}
-},
-legend: {
-margin: [0, -25],
-position: "ne",
-noColumns: 0,
-labelBoxBorderColor: null,
-labelFormatter: function(label, series) {
-  return label + '&nbsp;&nbsp;';
-},
-width: 40,
-height: 1
-},
-shadowSize: 0,
-colors: ['#3498DB', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'],
-tooltip: true,
-tooltipFillColor: "rgba(51, 51, 51, 0.55)",
-yaxis: {
-min: 0
-},
-xaxis: {
-ticks: 60,
-min: 0,
-max: 60
-}
-};
-
-var chart_plot_03_settings = {
-  series: {
-    curvedLines: {
-      apply: true,
-      active: true,
-      monotonicFit: true
-    }
-  },
-  colors: ["#26B99A"],
-  grid: {
-    borderWidth: {
-      top: 0,
-      right: 0,
-      bottom: 1,
-      left: 1
-    },
-    borderColor: {
-      bottom: "#7F8790",
-      left: "#7F8790"
-    }
-  }
-};
+    var chart_plot_03_settings = {
+        series: {
+            curvedLines: {
+                apply: true,
+                active: true,
+                monotonicFit: true
+            }
+        },
+        colors: ["#26B99A"],
+        grid: {
+            borderWidth: {
+                top: 0,
+                right: 0,
+                bottom: 1,
+                left: 1
+            },
+            borderColor: {
+                bottom: "#7F8790",
+                left: "#7F8790"
+            }
+        }
+    };
 
 
     if ($("#chart_plot_01").length){
@@ -696,24 +572,9 @@ var chart_plot_03_settings = {
 
     }
 
-    if ($("#galvanic_skin_response_chart").length){
-			console.log('Plot2');
+    if ($("#chart_plot_03").length){
+        console.log('Plot3');
 
-			$.plot( $("#galvanic_skin_response_chart"),
-			[{
-				label: "GSR",
-				data: galvanic_skin_response_chart_data,
-				lines: {
-          fillColor: "rgba(150, 202, 89, 0.12)"
-            },
-				points: {
-          fillColor: "#fff"
-				},
-			}], galvanic_skin_response_chart_settings);
-
-		}
-		if ($("#chart_plot_03").length){
-			console.log('Plot3');
 
         $.plot($("#chart_plot_03"), [{
             label: "Registrations",
@@ -2884,20 +2745,19 @@ function init_morris_charts() {
         Morris.Line({
             element: 'graph_line',
             xkey: 'year',
-            labels: ['Value'],
             ykeys: ['value'],
+            labels: ['Value'],
             hideHover: 'auto',
             lineColors: ['#26B99A', '#34495E', '#ACADAC', '#3498DB'],
             data: [
                 {year: '2012', value: 20},
                 {year: '2013', value: 10},
                 {year: '2014', value: 5},
-               {year: '2015', value: 5},
+                {year: '2015', value: 5},
                 {year: '2016', value: 20}
             ],
             resize: true
         });
-
 
         $MENU_TOGGLE.on('click', function() {
             $(window).resize();
