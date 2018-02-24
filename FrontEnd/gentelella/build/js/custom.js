@@ -810,10 +810,12 @@ function init_patient_basic_data() {
         var surname = data.results[0].surname;
         var dob = data.results[0].dob;
         var age = data.results[0].age;
-
+        $("#Patient").text("patient: " + name + " " + surname);
 
 
     });
+
+
 
 }
 
