@@ -913,9 +913,21 @@ function init_gauge() {
 
     if ($('#gauge-text').length){
 
+
+        var url = "http://127.0.0.1:8080/getLastTemp?userId=2";
+        $.get(url, function (data, status) {
+            var lastTemp = data.results[0].temp;
+
+            chart_gauge_01.maxValue = 45;
+            chart_gauge_01.animationSpeed = 70;
+            chart_gauge_01.set(lastTemp);
+            chart_gauge_01.setTextField(document.getElementById("gauge-text"));
+
+        });
+
         chart_gauge_01.maxValue = 45;
         chart_gauge_01.animationSpeed = 70;
-        chart_gauge_01.set(37);
+        chart_gauge_01.set(42);
         chart_gauge_01.setTextField(document.getElementById("gauge-text"));
 
     }
@@ -943,17 +955,95 @@ function init_gauge() {
 
 function init_patient_basic_data() {
     var url = "http://127.0.0.1:8080/getUser?userId=2";
-    $.get(url, function(data, status){
+    $.get(url, function (data, status) {
         console.log("Data: " + data.results[0] + "\nStatus: " + status);
         var name = data.results[0].name;
         var surname = data.results[0].surname;
         var dob = data.results[0].dob;
-        var age = data.results[0].age;
-        $("#Patient").text("patient: " + name + " " + surname);
+        var weight = data.results[0].weight;
+        $("#patient").text("patient: " + name + " " + surname);
+        $("#patientDob").text(dob);
+        $("#patientWeight").text(weight);
+
+
+    });
+}
+
+
+    function init_patient_metric_data() {
+    var url = "http://127.0.0.1:8080/getLastUserData?userId=2";
+    $.get(url, function(data, status){
+        console.log("Data: " + data.results[0] + "\nStatus: " + status);
+        var weight = data.results[0].weight;
+        var height = data.results[0].height;
+        var heartRate = data.results[0].heartRate;
+        var galvanic = data.results[0].galvanic;
+        var bmi = data.results[0].bmi;
+
+        $("#patientWeight").text(weight);
+        $("#patientHeight").text(height);
+        $("#patientHeartRate").text(heartRate);
+        $("#patientGalvanic").text(galvanic);
+        $("#patientBmi").text(bmi.toFixed(2));
+
+
 
 
     });
 
+
+
+}
+
+function init_all_patients_historic_data() {
+    var url = "http://127.0.0.1:8080/getAllData";
+    // var datatable = $('#patientsHistory').DataTable();
+    //
+    // $.get(url, function(data, status){
+    //     console.log("Data: " + data.results[0] + "\nStatus: " + status);
+    //     datatable.clear();
+    //     datatable.rows.add(data.results);
+    //     datatable.draw();
+    //
+    // });
+
+    var datatable = jQuery('#patientsHistory').DataTable({
+
+        "columns": [
+
+            { "data": "name"},
+            { "data": "surname"},
+            { "data": "heartRate"},
+            { "data": "weight"},
+            { "data": "height"},
+            { "data": "created"},
+            { "data": "updated"},
+            { "data": "temp"},
+            { "data": "galvanic"},
+            { "data": "id"},
+            { "data": "userId"},
+            { "data": "dob"},
+            { "data": "bmi"}
+
+        ],
+
+
+
+    });
+
+
+    $.get(url, function(data, status){
+        // console.log("Data: " + data.results[0] + "\nStatus: " + status);
+        console.log(data.results);
+        console.log(datatable.rows.add(data.results).draw());
+
+    });
+
+    // var data = [{"param1":"0.00","param2":"15.00","param3":"0.00","param4":"12"},
+    //     {"param1":"0.00","param2":"15.00","param3":"0.00","param4":"12"}];
+    //
+    //     console.log(data);
+    //     console.log(table.rows.add(data).draw());
 
 
 }
@@ -5189,6 +5279,7 @@ function init_echarts() {
 
 $(document).ready(function() {
     init_patient_basic_data();
+    init_patient_metric_data();
     init_sparklines();
     init_flot_chart();
     init_sidebar();
@@ -5214,6 +5305,7 @@ $(document).ready(function() {
     init_select2();
     init_validator();
     init_DataTables();
+    init_all_patients_historic_data();
     init_chart_doughnut();
     init_gauge();
     init_PNotify();
