@@ -19,6 +19,8 @@ router.get('/test', function(req, res, next) {
 });
 
 router.get('/getLastUserData', function(req, res, next) {
+    "use strict";
+
     let userId = req.query.userId;
 
     let mySqlConnUtils = getMySqlDbConnection();
@@ -45,6 +47,8 @@ router.get('/getLastUserData', function(req, res, next) {
 });
 
 router.get('/getUser', function(req, res, next) {
+    "use strict";
+
     let userId = req.query.userId;
 
     let mySqlConnUtils = getMySqlDbConnection();
@@ -76,6 +80,8 @@ router.get('/getUser', function(req, res, next) {
 });
 
 router.get('/getLastTemp', function(req, res, next) {
+    "use strict";
+
     let userId = req.query.userId;
 
     let mySqlConnUtils = getMySqlDbConnection();
@@ -98,6 +104,8 @@ router.get('/getLastTemp', function(req, res, next) {
 });
 
 router.get('/getAllData', function(req, res, next) {
+    "use strict";
+
     let userId = req.query.userId;
 
     let mySqlConnUtils = getMySqlDbConnection();
