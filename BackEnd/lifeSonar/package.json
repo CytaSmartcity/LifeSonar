@@ -1,0 +1,43 @@
+{
+  "name": "lifesonar",
+  "version": "1.0.0",
+  "description": "medical monitoring be api",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "async": "^2.0.0-rc.5",
+    "aws-sdk": "^2.7.20",
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "cors": "^2.8.4",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
+    "formidable": "^1.0.17",
+    "guid": "0.0.12",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "multer": "^1.1.0",
+    "mysql": "^2.10.2",
+    "node-uuid": "^1.4.7",
+    "request": "^2.72.0",
+    "serve-favicon": "~2.3.0",
+    "url": "^0.11.0",
+    "url-download": "0.0.5",
+    "uuid-lib": "0.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CytaSmartcity/LifeSonar.git"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "lifeSonarTeam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CytaSmartcity/LifeSonar/issues"
+  },
+  "homepage": "https://github.com/CytaSmartcity/LifeSonar#readme"
+}
