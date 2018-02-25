@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DataTables | Gentelella</title>
+    <title>LifeSonar Health Monitor - Users</title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,14 +15,6 @@
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- Datatables -->
-    <link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
@@ -114,7 +106,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">A. Yiatrou
+                    <img src="images/img.jpg" alt="">Dr. Yiatrou
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -205,7 +197,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Users <small> - Historic Data</small></h3>
+                <h3>LifeSonar Users</h3>
               </div>
 
               <div class="title_right">
@@ -223,48 +215,178 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-12">
                 <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Historic Medical Data <small>Users</small></h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
                   <div class="x_content">
-                    <table id="patientsHistory" class="table table-striped table-bordered table-hover">
-                      <thead>
-                        <tr>
-                            <th>name</th>
-                            <th>surname</th>
-                            <th>heartRate</th>
-                            <th>weight</th>
-                            <th>height</th>
-                            <th>created</th>
-                            <th>updated</th>
-                            <th>temp</th>
-                            <th>galvanic</th>
-                            <th>spo</th>
-                            <th>id</th>
-                            <th>userId</th>
-                            <th>dob</th>
-                            <th>bmi</th>
-                        </tr>
-                      </thead>
-                    </table>
+                    <div class="row">
+                     <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                  <!--       <ul class="pagination pagination-split">
+                          <li><a href="#">A</a></li>
+                          <li><a href="#">B</a></li>
+                          <li><a href="#">C</a></li>
+                          <li><a href="#">D</a></li>
+                          <li><a href="#">E</a></li>
+                          <li>...</li>
+                          <li><a href="#">W</a></li>
+                          <li><a href="#">X</a></li>
+                          <li><a href="#">Y</a></li>
+                          <li><a href="#">Z</a></li>
+                        </ul>-->
+                      </div>
+
+
+                      <div class="clearfix"></div>
+
+                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i class="fa fa-sign-in  "></i><i><strong> Check up:</strong> 25 February 2015</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Kostis Yiannis</h2>
+                            <!--  <p><i class="fa fa-sign-in  "></i><strong> Last check up </strong> 25 February 2015 </p>-->
+
+
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i> <strong> Birthdate: </strong> 01 March 1990 </li>
+                                <li><i class="fa fa-balance-scale"></i> Weight: 93 Kg</li>
+                                <li><i class="fa fa-male"></i> Height: 169 cm</li>
+                                <li><i class="fa fa-heartbeat"></i> Recent Heart beat: 88</li>
+
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-primary btn-xs">
+                                <i class="fa fa-user"> </i> View Profile
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i class="fa fa-sign-in  "></i><i><strong> Check up:</strong> 25 February 2015</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Kostis Yiannis</h2>
+                            <!--  <p><i class="fa fa-sign-in  "></i><strong> Last check up </strong> 25 February 2015 </p>-->
+
+
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i> <strong> Birthdate: </strong> 01 March 1990 </li>
+                                <li><i class="fa fa-balance-scale"></i> Weight: 93 Kg</li>
+                                <li><i class="fa fa-male"></i> Height: 169 cm</li>
+                                <li><i class="fa fa-heartbeat"></i> Recent Heart beat: 88</li>
+
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-primary btn-xs">
+                                <i class="fa fa-user"> </i> View Profile
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i class="fa fa-sign-in  "></i><i><strong> Check up:</strong> 25 February 2015</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Kostis Yiannis</h2>
+                            <!--  <p><i class="fa fa-sign-in  "></i><strong> Last check up </strong> 25 February 2015 </p>-->
+
+
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i> <strong> Birthdate: </strong> 01 March 1990 </li>
+                                <li><i class="fa fa-balance-scale"></i> Weight: 93 Kg</li>
+                                <li><i class="fa fa-male"></i> Height: 169 cm</li>
+                                <li><i class="fa fa-heartbeat"></i> Recent Heart beat: 88</li>
+
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-primary btn-xs">
+                                <i class="fa fa-user"> </i> View Profile
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+                      <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                        <div class="well profile_view">
+                          <div class="col-sm-12">
+                            <h4 class="brief"><i class="fa fa-sign-in  "></i><i><strong> Check up:</strong> 25 February 2015</i></h4>
+                            <div class="left col-xs-7">
+                              <h2>Kostis Yiannis</h2>
+                            <!--  <p><i class="fa fa-sign-in  "></i><strong> Last check up </strong> 25 February 2015 </p>-->
+
+
+                              <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i> <strong> Birthdate: </strong> 01 March 1990 </li>
+                                <li><i class="fa fa-balance-scale"></i> Weight: 93 Kg</li>
+                                <li><i class="fa fa-male"></i> Height: 169 cm</li>
+                                <li><i class="fa fa-heartbeat"></i> Recent Heart beat: 88</li>
+
+                              </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                              <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                          </div>
+                          <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                              <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">
+                                </i> <i class="fa fa-comments-o"></i> </button>
+                              <button type="button" class="btn btn-primary btn-xs">
+                                <i class="fa fa-user"> </i> View Profile
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -276,7 +398,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            LifeSonar
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -292,29 +414,8 @@
     <script src="../vendors/fastclick/lib/fastclick.js"></script>
     <!-- NProgress -->
     <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <!-- Datatables -->
-    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="../vendors/jszip/dist/jszip.min.js"></script>
-    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
-    <script src="../build/js/custom2.js"></script>
-
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
-
   </body>
 </html>
