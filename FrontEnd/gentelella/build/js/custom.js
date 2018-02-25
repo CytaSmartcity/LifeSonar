@@ -979,12 +979,32 @@ function init_patient_basic_data() {
         var heartRate = data.results[0].heartRate;
         var galvanic = data.results[0].galvanic;
         var bmi = data.results[0].bmi;
+        var spo = data.results[0].spo;
+
+        if (bmi > 25){
+            $("#patientBmi").text(bmi.toFixed(2) + " obese  ");
+            $("#patientBmi").addClass('red');
+
+        }
+        else {
+            $("#patientBmi").text(bmi.toFixed(2));
+
+        }
+
+        if (spo < 90){
+            $("#patientSPo2").text(spo + "% low");
+            $("#patientSPo2").addClass('red');
+
+        }
+        else {
+            $("#patientSPo2").text(spo+"%");
+
+        }
 
         $("#patientWeight").text(weight);
         $("#patientHeight").text(height);
         $("#patientHeartRate").text(heartRate);
         $("#patientGalvanic").text(galvanic);
-        $("#patientBmi").text(bmi.toFixed(2));
 
 
 
@@ -996,16 +1016,8 @@ function init_patient_basic_data() {
 }
 
 function init_all_patients_historic_data() {
-    var url = "http://127.0.0.1:8080/getAllData";
-    // var datatable = $('#patientsHistory').DataTable();
-    //
-    // $.get(url, function(data, status){
-    //     console.log("Data: " + data.results[0] + "\nStatus: " + status);
-    //     datatable.clear();
-    //     datatable.rows.add(data.results);
-    //     datatable.draw();
-    //
-    // });
+    var url = "http://127.0.0.1:8080/getAllData?userId=2";
+
 
     var datatable = jQuery('#patientsHistory').DataTable({
 
