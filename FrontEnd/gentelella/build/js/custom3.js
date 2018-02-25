@@ -55,19 +55,58 @@ var CURRENT_URL = window.location.href.split('#')[0].split('?')[0],
 
 // Sidebar
 function init_patient_profile_data() {
-    var url = "http://127.0.0.1:8080/getAllData";
+    var url = "http://127.0.0.1:8080/getAllProfileData";
     $.get(url, function (data, status) {
         console.log("Data: " + data.results[0] + "\nStatus: " + status);
-        let users = data.results;
-        let html = "                    <div class=\"row\">\n" +
+        var users = data.results;
+        var html = "                    <div class=\"row\">\n" +
             "                     <div class=\"col-md-12 col-sm-12 col-xs-12 text-center\">\n" +
             "                      </div>\n" +
             "\n" +
             "\n" +
             "                      <div class=\"clearfix\"></div>";
 
+        $.each( users, function( i, l ){
+            console.log("aaaaaaaaaaaaaa");
 
+            html += "   <div class=\"col-md-4 col-sm-4 col-xs-12 profile_details\">\n" +
+                "                        <div class=\"well profile_view\">\n" +
+                "                          <div class=\"col-sm-12\">\n" +
+                "                            <h4 class=\"brief\"><i class=\"fa fa-sign-in  \"></i><i><strong> Check up:</strong> "+users[i].updated+"</i></h4>\n" +
+                "                            <div class=\"left col-xs-7\">\n" +
+                "                              <h2> " +users[i].name +"</h2>\n" +
+                "                            <!--  <p><i class=\"fa fa-sign-in  \"></i><strong> Last check up </strong> 25 February 2015 </p>-->\n" +
+                "\n" +
+                "\n" +
+                "                              <ul class=\"list-unstyled\">\n" +
+                "                                <li><i class=\"fa fa-calendar\"></i> <strong> Birthdate: </strong> " +users[i].dob +" </li>\n" +
+                "                                <li><i class=\"fa fa-balance-scale\"></i> Weight: " +users[i].weight +"</li>\n" +
+                "                                <li><i class=\"fa fa-male\"></i> Height: " +users[i].height +" cm</li>\n" +
+                "\n" +
+                "                              </ul>\n" +
+                "                            </div>\n" +
+                "                            <div class=\"right col-xs-5 text-center\">\n" +
+                "                              <img src=\"images/img"+i+".png\" alt=\"\" class=\"img-circle img-responsive\">\n" +
+                "                            </div>\n" +
+                "                          </div>\n" +
+                "                          <div class=\"col-xs-12 bottom text-center\">\n" +
+                "                            <div class=\"col-xs-12 col-sm-6 emphasis\">\n" +
+                "                            </div>\n" +
+                "                            <div class=\"col-xs-12 col-sm-6 emphasis\">\n" +
+                "                              <button type=\"button\" class=\"btn btn-success btn-xs\"> <i class=\"fa fa-user\">\n" +
+                "                                </i> <i class=\"fa fa-comments-o\"></i> </button>\n" +
+                "                              <button type=\"button\" class=\"btn btn-primary btn-xs\">\n" +
+                "                                <i class=\"fa fa-user\"> </i> View Profile\n" +
+                "                              </button>\n" +
+                "                            </div>\n" +
+                "                          </div>\n" +
+                "                        </div>\n" +
+                "                      </div>\n";
 
+        });
+
+        console.log(users)
+        $("#patientsInfo").append(html);
 
 
     });

@@ -103,6 +103,60 @@ router.get('/getLastTemp', function(req, res, next) {
 
 });
 
+router.get('/getAllProfileData', function(req, res, next) {
+    "use strict";
+
+    let userId = req.query.userId;
+
+    let mySqlConnUtils = getMySqlDbConnection();
+
+    return async.waterfall([
+        function(wfCallback){
+            var sql = "SELECT \n" +
+                "                    `b`.`name`, \n" +
+                "                    `b`.`surname`, \n" +
+                "                    `a`.`heartRate`, \n" +
+                "                    `a`.`weight`, \n" +
+                "                    `a`.`height`, \n" +
+                "                    `a`.`created`, \n" +
+                "                    `a`.`updated`, \n" +
+                "                    `a`.`temp`, \n" +
+                "                    `a`.`galvanic`, \n" +
+                "                    `a`.`spo`, \n" +
+                "\t\t\t\t\t`a`.`id`, \n" +
+                "                    `a`.`userId`, \n" +
+                "                    `b`.`dob` \n" +
+                "\n" +
+                "                     \n" +
+                "                FROM \n" +
+                "                    lifesonar.userData a  \n" +
+                "                    join lifesonar.users b on a.userId=b.id group by b.id \n" +
+                "                ORDER BY b.created limit 4; \n" +
+                "                 \n" +
+                "                ";
+            return mySqlConnUtils.query(sql,[],false,wfCallback);
+        }
+    ],function(error,results){
+
+        if(error){
+            return res.status(200).send({success: true, results: []});
+        }
+
+        for (var i = 0, len = results.length; i < len; i++) {
+            let weight = results[i].weight;
+            let height = results[i].height;
+
+            results[i].bmi = ((weight/height/height) * 10000).toFixed(2);
+        }
+
+
+
+        return res.status(200).send({success: true, results: results});
+
+    });
+
+});
+
 router.get('/getAllData', function(req, res, next) {
     "use strict";
 
