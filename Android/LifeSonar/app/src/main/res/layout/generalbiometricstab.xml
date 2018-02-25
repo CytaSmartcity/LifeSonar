@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#000000"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/LabelSensorTemperature"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Temperature(°C*)"
+                android:textColor="#ffff6464"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/LabelSensorPulse"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Pulse(cpm*)"
+                android:textColor="#ffffff64"
+                android:textSize="18sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/borderdown"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/sensorvalueTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/sensorvaluePulse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/LabelSensorOxygen"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Blood Oxygen(%*)"
+                android:textColor="#ff64ff64"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/LabelSensorAirflow"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Airflow(bmp*)"
+                android:textColor="#2196F3"
+                android:textSize="18sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/borderdown"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/sensorvalueOxygen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/sensorvalueAirflow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/LabelSensorSystolic"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Systolic Pressure(mmHg*)"
+                android:textColor="#99CCFF"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/LabelSensorDiastolic"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@drawable/borderup"
+                android:gravity="center"
+                android:text="Diastolic Pressure(mmHg*)"
+                android:textColor="#00FFCC"
+                android:textSize="18sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@drawable/borderdown"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/sensorvalueSystolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/sensorvalueDiastolic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
