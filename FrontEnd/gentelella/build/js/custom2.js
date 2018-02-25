@@ -996,7 +996,7 @@ function init_patient_basic_data() {
 }
 
 function init_all_patients_historic_data() {
-    var url = "http://127.0.0.1:8080/getAllData";
+    var url = "http://127.0.0.1:8080/getAllData?userId=2";
     // var datatable = $('#patientsHistory').DataTable();
     //
     // $.get(url, function(data, status){
@@ -1020,6 +1020,7 @@ function init_all_patients_historic_data() {
             { "data": "updated"},
             { "data": "temp"},
             { "data": "galvanic"},
+            { "data": "spo"},
             { "data": "id"},
             { "data": "userId"},
             { "data": "dob"},

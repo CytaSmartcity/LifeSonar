@@ -27,7 +27,7 @@ router.get('/getLastUserData', function(req, res, next) {
 
     return async.waterfall([
         function(wfCallback){
-            var sql = "SELECT temp, heartRate, weight, height, galvanic, created from userData where userId=" + userId + " order by created desc limit 1";
+            var sql = "SELECT temp, heartRate, weight, height, galvanic, spo, created from userData where userId=" + userId + " order by created desc limit 1";
             return mySqlConnUtils.query(sql,[],false,wfCallback);
         }
     ],function(error,results){
@@ -112,28 +112,29 @@ router.get('/getAllData', function(req, res, next) {
 
     return async.waterfall([
         function(wfCallback){
-            var sql = "SELECT \n" +
-                "    `b`.`name`,\n" +
-                "    `b`.`surname`,\n" +
-                "    `a`.`heartRate`,\n" +
-                "    `a`.`weight`,\n" +
-                "    `a`.`height`,\n" +
-                "    `a`.`created`,\n" +
-                "    `a`.`updated`,\n" +
-                "    `a`.`temp`,\n" +
-                "    `a`.`galvanic`,\n" +
-                "\t`a`.`id`,\n" +
-                "    `a`.`userId`,\n" +
-                "    `b`.`dob`\n" +
-
-                "    \n" +
-                "FROM\n" +
-                "    lifesonar.userData a \n" +
-                "    join lifesonar.users b on a.userId=b.id\n" +
-                "GROUP BY a.userId\n" +
-                "ORDER BY b.created;\n" +
-                "\n" +
-                "\n";
+                var sql = "SELECT \n" +
+                    "                    `b`.`name`, \n" +
+                    "                    `b`.`surname`, \n" +
+                    "                    `a`.`heartRate`, \n" +
+                    "                    `a`.`weight`, \n" +
+                    "                    `a`.`height`, \n" +
+                    "                    `a`.`created`, \n" +
+                    "                    `a`.`updated`, \n" +
+                    "                    `a`.`temp`, \n" +
+                    "                    `a`.`galvanic`, \n" +
+                    "                    `a`.`spo`, \n" +
+                    "\t\t\t\t\t`a`.`id`, \n" +
+                    "                    `a`.`userId`, \n" +
+                    "                    `b`.`dob` \n" +
+                    "\n" +
+                    "                     \n" +
+                    "                FROM \n" +
+                    "                    lifesonar.userData a  \n" +
+                    "                    join lifesonar.users b on a.userId=b.id \n" +
+                    "                WHERE a.userId = " + userId +"\n" +
+                    "                ORDER BY b.created; \n" +
+                    "                 \n" +
+                    "                ";
             return mySqlConnUtils.query(sql,[],false,wfCallback);
         }
     ],function(error,results){
