@@ -1,0 +1,302 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.crowdhackathon.graphs.MeasurementsCapture" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:weightSum="3" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/titleDiagnosis"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#E8E8E8"
+                android:gravity="center_horizontal"
+                android:text="Patient Summary Results"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:indeterminate="false"
+                android:max="100"
+                android:minWidth="200dp"
+                android:progress="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/textprogress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Loading Data..."
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisTemperature"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="Temperature(°C*) ="
+                android:textColor="#CC66FF"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValueTemperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisBloodOxygen"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="Blood Oxygen(%*) ="
+                android:textColor="#ff64ff64"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValueBloodOxygen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisAirflow"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="Airflow(bmp*) ="
+                android:textColor="#2196F3"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValueAirflow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisConductivity"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="Conductivity(S/m*) ="
+                android:textColor="#CC9900"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValueConductivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisPulse"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="Pulse(cpm*) ="
+                android:textColor="#ffff6464"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValuePulse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/diagnosisECG"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.1"
+                android:gravity="left"
+                android:text="ECG(mV*) ="
+                android:textColor="#FF3300"
+                android:textSize="18sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/diagnosisValueECG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/shade"
+                android:gravity="center"
+                android:text="0.0"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" >
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#000000"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/buttonTalk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_selection"
+                android:text="Speak + Save" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
