@@ -961,7 +961,7 @@ function init_patient_basic_data() {
         var surname = data.results[0].surname;
         var dob = data.results[0].dob;
         var weight = data.results[0].weight;
-        $("#patient").text("patient: " + name + " " + surname);
+        $("#patient").text("Patient: " + name + " " + surname);
         $("#patientDob").text(dob);
         $("#patientWeight").text(weight);
 
