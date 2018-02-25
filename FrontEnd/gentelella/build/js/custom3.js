@@ -95,7 +95,7 @@ function init_patient_profile_data() {
                 "                            <div class=\"col-xs-12 col-sm-6 emphasis\">\n" +
                 "                              <button type=\"button\" class=\"btn btn-success btn-xs\"> <i class=\"fa fa-user\">\n" +
                 "                                </i> <i class=\"fa fa-comments-o\"></i> </button>\n" +
-                "                              <button type=\"button\" class=\"btn btn-primary btn-xs\">\n" +
+                "                              <button type=\"button\" onclick=\"window.location.href='index.html'\" class=\"btn btn-primary btn-xs\">\n" +
                 "                                <i class=\"fa fa-user\"> </i> View Profile\n" +
                 "                              </button>\n" +
                 "                            </div>\n" +
